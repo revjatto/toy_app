@@ -1,0 +1,37 @@
+* Configuration
+
+* Allowing connections to the local web server.
+
+* config/environments/development.rb
+
+ # Allow connections to local server.
+  config.hosts.clear
+
+Setting the root route.
+
+config/routes.rb
+Rails.application.routes.draw do
+  root 'controller#main'
+end 
+
+Git initialisation
+
+git init
+git status
+
+To tell Git we want to keep the changes, we use the commit command:
+
+git commit -m "Initialize repository"
+
+By the way, we can see a list of the commit messages using the log command:
+
+$ git log
+
+We see here that a file has been deleted, but the changes are only on the “working tree”; they haven’t been committed yet. This means we can still undo the changes using the checkout command with the -f flag to force overwriting the current changes:
+
+$ git checkout -f
+$ git status
+On branch master
+nothing to commit, working tree clean
+$ ls app/controllers/
+application_controller.rb  concerns/
